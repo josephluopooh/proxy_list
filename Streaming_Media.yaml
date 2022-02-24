@@ -1,12 +1,10 @@
 payload:
   # SoundCloud
-  - USER-AGENT,SoundCloud*
   - DOMAIN-SUFFIX,p-cdn.us
   - DOMAIN-SUFFIX,sndcdn.com
   - DOMAIN-SUFFIX,soundcloud.com
 
   # Spotify
-  - USER-AGENT,Spotify*
   - DOMAIN-SUFFIX,pscdn.co
   - DOMAIN-SUFFIX,scdn.co
   - DOMAIN-SUFFIX,spotify.com
@@ -15,16 +13,11 @@ payload:
   - DOMAIN-KEYWORD,-spotify-com
 
   # YouTube Music
-  - USER-AGENT,com.google.ios.youtubemusic*
-  - USER-AGENT,YouTubeMusic*
 
   # Overcast
-  - USER-AGENT,Overcast*
   - DOMAIN-SUFFIX,overcast.fm
 
   # Amazon Prime Video
-  - USER-AGENT,InstantVideo.US*
-  - USER-AGENT,Prime%20Video*
   - DOMAIN-SUFFIX,aiv-cdn.net
   - DOMAIN-SUFFIX,aiv-delivery.net
   - DOMAIN-SUFFIX,amazonvideo.com
@@ -60,7 +53,6 @@ payload:
   - DOMAIN,upos-bstar1-mirrorakam.akamaized.net
 
   # Disney+
-  - USER-AGENT,Disney+*
   - DOMAIN-SUFFIX,bamgrid.com
   - DOMAIN-SUFFIX,disneyplus.com
   - DOMAIN-SUFFIX,disney-plus.net
@@ -74,11 +66,9 @@ payload:
   - DOMAIN-SUFFIX,dmm-extension.com
 
   # HBO NOW & HBO Max
-  - USER-AGENT,HBO%20NOW*
   - DOMAIN-SUFFIX,hbo.com
   - DOMAIN-SUFFIX,hbogo.com
   - DOMAIN-SUFFIX,hbonow.com
-  - USER-AGENT,HBOMAX*
   - DOMAIN-SUFFIX,hbomax.com
   - DOMAIN-SUFFIX,hbomaxcdn.com
 
@@ -93,7 +83,6 @@ payload:
   - DOMAIN-SUFFIX,hulu.jp
 
   # Netflix
-  - USER-AGENT,Argo*
   - DOMAIN-SUFFIX,netflix.com
   - DOMAIN-SUFFIX,netflix.net
   - DOMAIN-SUFFIX,nflxext.com
@@ -107,8 +96,6 @@ payload:
   # - GEOIP,NETFLIX
 
   # YouTube
-  - USER-AGENT,com.google.ios.youtube*
-  - USER-AGENT,YouTube*
   - DOMAIN-SUFFIX,googlevideo.com
   - DOMAIN-SUFFIX,withyoutube.com
   - DOMAIN-SUFFIX,youtu.be
