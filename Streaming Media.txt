@@ -1,108 +1,108 @@
 # SoundCloud
-USER-AGENT,SoundCloud*,Streaming Media
-DOMAIN-SUFFIX,p-cdn.us,Streaming Media
-DOMAIN-SUFFIX,sndcdn.com,Streaming Media
-DOMAIN-SUFFIX,soundcloud.com,Streaming Media
+USER-AGENT, SoundCloud*, Streaming Media
+DOMAIN-SUFFIX, p-cdn.us, Streaming Media
+DOMAIN-SUFFIX, sndcdn.com, Streaming Media
+DOMAIN-SUFFIX, soundcloud.com, Streaming Media
 # Spotify
-USER-AGENT,Spotify*,Streaming Media
-DOMAIN-SUFFIX,pscdn.co,Streaming Media
-DOMAIN-SUFFIX,scdn.co,Streaming Media
-DOMAIN-SUFFIX,spotify.com,Streaming Media
-DOMAIN-SUFFIX,spoti.fi,Streaming Media
-DOMAIN-KEYWORD,spotify.com,Streaming Media
-DOMAIN-KEYWORD,-spotify-com,Streaming Media
-# YouTubeMusic
-USER-AGENT,com.google.ios.youtubemusic*,Streaming Media
-USER-AGENT,YouTubeMusic*,Streaming Media
+USER-AGENT, Spotify*, Streaming Media
+DOMAIN-SUFFIX, pscdn.co, Streaming Media
+DOMAIN-SUFFIX, scdn.co, Streaming Media
+DOMAIN-SUFFIX, spotify.com, Streaming Media
+DOMAIN-SUFFIX, spoti.fi, Streaming Media
+DOMAIN-KEYWORD, spotify.com, Streaming Media
+DOMAIN-KEYWORD, -spotify-com, Streaming Media
+# YouTube Music
+USER-AGENT, com.google.ios.youtubemusic*, Streaming Media
+USER-AGENT, YouTubeMusic*, Streaming Media
 # Overcast
-USER-AGENT,Overcast*,Streaming Media
-DOMAIN-SUFFIX,overcast.fm,Streaming Media
+USER-AGENT, Overcast*, Streaming Media
+DOMAIN-SUFFIX, overcast.fm, Streaming Media
 # Amazon Prime Video
-USER-AGENT,InstantVideo.US*,Streaming Media
-USER-AGENT,Prime%20Video*,Streaming Media
-DOMAIN-SUFFIX,aiv-cdn.net,Streaming Media
-DOMAIN-SUFFIX,aiv-delivery.net,Streaming Media
-DOMAIN-SUFFIX,amazonvideo.com,Streaming Media
-DOMAIN-SUFFIX,media-amazon.com,Streaming Media
-DOMAIN-SUFFIX,primevideo.com,Streaming Media
-DOMAIN-SUFFIX,pv-cdn.net,Streaming Media
-DOMAIN,atv-ps.amazon.com,Streaming Media
-DOMAIN,fls-na.amazon.com,Streaming Media
-DOMAIN,avodmp4s3ww-a.akamaihd.net,Streaming Media
-DOMAIN,d25xi40x97liuc.cloudfront.net,Streaming Media
-DOMAIN,dmqdd6hw24ucf.cloudfront.net,Streaming Media
-DOMAIN,dmqdd6hw24ucf.cloudfront.net,Streaming Media
-DOMAIN,d22qjgkvxw22r6.cloudfront.net,Streaming Media
-DOMAIN,d1v5ir2lpwr8os.cloudfront.net,Streaming Media
-DOMAIN,d27xxe7juh1us6.cloudfront.net,Streaming Media
-# DOMAIN,www.amazon.com,Streaming Media
-DOMAIN-KEYWORD,avoddashs,Streaming Media
+USER-AGENT, InstantVideo.US*, Streaming Media
+USER-AGENT, Prime%20Video*, Streaming Media
+DOMAIN-SUFFIX, aiv-cdn.net, Streaming Media
+DOMAIN-SUFFIX, aiv-delivery.net, Streaming Media
+DOMAIN-SUFFIX, amazonvideo.com, Streaming Media
+DOMAIN-SUFFIX, media-amazon.com, Streaming Media
+DOMAIN-SUFFIX, primevideo.com, Streaming Media
+DOMAIN-SUFFIX, pv-cdn.net, Streaming Media
+DOMAIN, atv-ps.amazon.com, Streaming Media
+DOMAIN, fls-na.amazon.com, Streaming Media
+DOMAIN, avodmp4s3ww-a.akamaihd.net, Streaming Media
+DOMAIN, d25xi40x97liuc.cloudfront.net, Streaming Media
+DOMAIN, dmqdd6hw24ucf.cloudfront.net, Streaming Media
+DOMAIN, dmqdd6hw24ucf.cloudfront.net, Streaming Media
+DOMAIN, d22qjgkvxw22r6.cloudfront.net, Streaming Media
+DOMAIN, d1v5ir2lpwr8os.cloudfront.net, Streaming Media
+DOMAIN, d27xxe7juh1us6.cloudfront.net, Streaming Media
+# DOMAIN, www.amazon.com, Streaming Media
+DOMAIN-KEYWORD, avoddashs, Streaming Media
 # Apple Music TV
-DOMAIN,tv.applemusic.com,Streaming Media
+DOMAIN, tv.applemusic.com, Streaming Media
 # Apple TV
-DOMAIN,linear.tv.apple.com,Streaming Media
-DOMAIN,play-edge.itunes.apple.com,Streaming Media
-DOMAIN,uts-api.itunes.apple.com,Streaming Media
+DOMAIN, linear.tv.apple.com, Streaming Media
+DOMAIN, play-edge.itunes.apple.com, Streaming Media
+DOMAIN, uts-api.itunes.apple.com, Streaming Media
 # Bilibili Intl
-DOMAIN-SUFFIX,biliintl.com,Streaming Media
-DOMAIN,apm-misaka.biliapi.net,Streaming Media
-DOMAIN,p.bstarstatic.com,Streaming Media
-DOMAIN,p-bstarstatic.akamaized.net,Streaming Media
-DOMAIN,upos-bstar-mirrorakam.akamaized.net,Streaming Media
-DOMAIN,upos-bstar1-mirrorakam.akamaized.net,Streaming Media
+DOMAIN-SUFFIX, biliintl.com, Streaming Media
+DOMAIN, apm-misaka.biliapi.net, Streaming Media
+DOMAIN, p.bstarstatic.com, Streaming Media
+DOMAIN, p-bstarstatic.akamaized.net, Streaming Media
+DOMAIN, upos-bstar-mirrorakam.akamaized.net, Streaming Media
+DOMAIN, upos-bstar1-mirrorakam.akamaized.net, Streaming Media
 # Disney+
-USER-AGENT,Disney+*,Streaming Media
-DOMAIN-SUFFIX,bamgrid.com,Streaming Media
-DOMAIN-SUFFIX,disneyplus.com,Streaming Media
-DOMAIN-SUFFIX,disney-plus.net,Streaming Media
-DOMAIN-SUFFIX,disneyStreaming Media.com,Streaming Media
-DOMAIN-SUFFIX,dssott.com,Streaming Media
-DOMAIN,cdn.registerdisney.go.com,Streaming Media
+USER-AGENT, Disney+*, Streaming Media
+DOMAIN-SUFFIX, bamgrid.com, Streaming Media
+DOMAIN-SUFFIX, disneyplus.com, Streaming Media
+DOMAIN-SUFFIX, disney-plus.net, Streaming Media
+DOMAIN-SUFFIX, disney Streaming Media.com, Streaming Media
+DOMAIN-SUFFIX, dssott.com, Streaming Media
+DOMAIN, cdn.registerdisney.go.com, Streaming Media
 # DMM
-DOMAIN-SUFFIX,dmm.co.jp,Streaming Media
-DOMAIN-SUFFIX,dmm.com,Streaming Media
-DOMAIN-SUFFIX,dmm-extension.com,Streaming Media
-# HBO NOW & Max
-USER-AGENT,HBO%20NOW*,Streaming Media
-DOMAIN-SUFFIX,hbo.com,Streaming Media
-DOMAIN-SUFFIX,hbogo.com,Streaming Media
-DOMAIN-SUFFIX,hbonow.com,Streaming Media
-USER-AGENT,HBOMAX*,Streaming Media
-DOMAIN-SUFFIX,hbomax.com,Streaming Media
-DOMAIN-SUFFIX,hbomaxcdn.com,Streaming Media
+DOMAIN-SUFFIX, dmm.co.jp, Streaming Media
+DOMAIN-SUFFIX, dmm.com, Streaming Media
+DOMAIN-SUFFIX, dmm-extension.com, Streaming Media
+# HBO NOW & HBO Max
+USER-AGENT, HBO%20NOW*, Streaming Media
+DOMAIN-SUFFIX, hbo.com, Streaming Media
+DOMAIN-SUFFIX, hbogo.com, Streaming Media
+DOMAIN-SUFFIX, hbonow.com, Streaming Media
+USER-AGENT, HBOMAX*, Streaming Media
+DOMAIN-SUFFIX, hbomax.com, Streaming Media
+DOMAIN-SUFFIX, hbomaxcdn.com, Streaming Media
 # Hulu
-DOMAIN-SUFFIX,hulu.com,Streaming Media
-DOMAIN-SUFFIX,huluim.com,Streaming Media
-DOMAIN-SUFFIX,hulustream.com,Streaming Media
+DOMAIN-SUFFIX, hulu.com, Streaming Media
+DOMAIN-SUFFIX, huluim.com, Streaming Media
+DOMAIN-SUFFIX, hulustream.com, Streaming Media
 # Hulu_jp
-DOMAIN-SUFFIX,happyon.jp,Streaming Media
-DOMAIN-SUFFIX,hjholdings.jp,Streaming Media
-DOMAIN-SUFFIX,hulu.jp,Streaming Media
+DOMAIN-SUFFIX, happyon.jp, Streaming Media
+DOMAIN-SUFFIX, hjholdings.jp, Streaming Media
+DOMAIN-SUFFIX, hulu.jp, Streaming Media
 # Netflix
-USER-AGENT,Argo*,Streaming Media
-DOMAIN-SUFFIX,netflix.com,Streaming Media
-DOMAIN-SUFFIX,netflix.net,Streaming Media
-DOMAIN-SUFFIX,nflxext.com,Streaming Media
-DOMAIN-SUFFIX,nflximg.com,Streaming Media
-DOMAIN-SUFFIX,nflximg.net,Streaming Media
-DOMAIN-SUFFIX,nflxso.net,Streaming Media
-DOMAIN-SUFFIX,nflxvideo.net,Streaming Media
-DOMAIN-KEYWORD,netflixdnstest,Streaming Media
-DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,Streaming Media
-DOMAIN-KEYWORD,dualstack.apiproxy-,Streaming Media
-# GEOIP,NETFLIX,Streaming Media
+USER-AGENT, Argo*, Streaming Media
+DOMAIN-SUFFIX, netflix.com, Streaming Media
+DOMAIN-SUFFIX, netflix.net, Streaming Media
+DOMAIN-SUFFIX, nflxext.com, Streaming Media
+DOMAIN-SUFFIX, nflximg.com, Streaming Media
+DOMAIN-SUFFIX, nflximg.net, Streaming Media
+DOMAIN-SUFFIX, nflxso.net, Streaming Media
+DOMAIN-SUFFIX, nflxvideo.net, Streaming Media
+DOMAIN-KEYWORD, netflixdnstest, Streaming Media
+DOMAIN-KEYWORD, apiproxy-device-prod-nlb-, Streaming Media
+DOMAIN-KEYWORD, dualstack.apiproxy-, Streaming Media
+# GEOIP, NETFLIX, Streaming Media
 # YouTube
-USER-AGENT,com.google.ios.youtube*,Streaming Media
-USER-AGENT,YouTube*,Streaming Media
-DOMAIN-SUFFIX,googlevideo.com,Streaming Media
-DOMAIN-SUFFIX,withyoutube.com,Streaming Media
-DOMAIN-SUFFIX,youtu.be,Streaming Media
-DOMAIN-SUFFIX,youtube.com,Streaming Media
-DOMAIN-SUFFIX,youtubeeducation.com,Streaming Media
-DOMAIN-SUFFIX,youtubegaming.com,Streaming Media
-DOMAIN-SUFFIX,youtubekids.com,Streaming Media
-DOMAIN-SUFFIX,youtube-nocookie.com,Streaming Media
-DOMAIN-SUFFIX,yt.be,Streaming Media
-DOMAIN-SUFFIX,ytimg.com,Streaming Media
-DOMAIN,youtubei.googleapis.com,Streaming Media
-DOMAIN,yt3.ggpht.com,Streaming Media
+USER-AGENT, com.google.ios.youtube*, Streaming Media
+USER-AGENT, YouTube*, Streaming Media
+DOMAIN-SUFFIX, googlevideo.com, Streaming Media
+DOMAIN-SUFFIX, withyoutube.com, Streaming Media
+DOMAIN-SUFFIX, youtu.be, Streaming Media
+DOMAIN-SUFFIX, youtube.com, Streaming Media
+DOMAIN-SUFFIX, youtubeeducation.com, Streaming Media
+DOMAIN-SUFFIX, youtubegaming.com, Streaming Media
+DOMAIN-SUFFIX, youtubekids.com, Streaming Media
+DOMAIN-SUFFIX, youtube-nocookie.com, Streaming Media
+DOMAIN-SUFFIX, yt.be, Streaming Media
+DOMAIN-SUFFIX, ytimg.com, Streaming Media
+DOMAIN, youtubei.googleapis.com, Streaming Media
+DOMAIN, yt3.ggpht.com, Streaming Media
