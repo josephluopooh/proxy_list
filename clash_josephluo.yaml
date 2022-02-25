@@ -9,27 +9,27 @@ experimental:
 hosts:
   mtalk.google.com: 108.177.125.188
 proxies:
-  - name: sample1
-    type: vmess
-    server: sample1.com
-    port: sample
-    uuid: sample
-    alterId: 0
-    cipher: auto
-  - name: sample2
-    type: vmess
-    server: sample2.com
-    port: sample
-    uuid: sample
-    alterId: 0
-    cipher: auto
-  - name: sample3
-    type: vmess
-    server: sample3.com
-    port: sample
-    uuid: sample
-    alterId: 0
-    cipher: auto
+  # - name: sample1
+  #   type: vmess
+  #   server: sample1.com
+  #   port: sample
+  #   uuid: sample
+  #   alterId: 0
+  #   cipher: auto
+  # - name: sample2
+  #   type: vmess
+  #   server: sample2.com
+  #   port: sample
+  #   uuid: sample
+  #   alterId: 0
+  #   cipher: auto
+  # - name: sample3
+  #   type: vmess
+  #   server: sample3.com
+  #   port: sample
+  #   uuid: sample
+  #   alterId: 0
+  #   cipher: auto
 proxy-groups:
   - name: PROXY
     type: select
