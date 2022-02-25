@@ -34,11 +34,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - Auto Select
+      - auto select
       # - sample1
       # - sample2
       # - sample3
-  - name: Auto Select
+  - name: auto select
     type: url-test
     proxies:
       # - sample1
@@ -51,7 +51,7 @@ proxy-groups:
     proxies:
       - PROXY
       - DIRECT
-  - name: Streaming_Media
+  - name: streaming_media
     type: select
     proxies:
       - PROXY
@@ -65,11 +65,11 @@ proxy-groups:
       - PROXY
       - DIRECT
 rule-providers:
-  Streaming_Media:
+  streaming_media:
     type: http
     behavior: classical
-    path: ./rule-providers/Streaming_Media.yaml
-    url: https://raw.githubusercontent.com/josephluopooh/Proxy_list/main/Streaming_Media.yaml
+    path: ./rule-providers/streaming_media.yaml
+    url: https://raw.githubusercontent.com/josephluopooh/Proxy_list/main/streaming_media.yaml
     interval: 86400
   CN:
     type: http
@@ -78,7 +78,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/josephluopooh/Proxy_list/main/CN.yaml
     interval: 86400
 rules:
-  - RULE-SET,Streaming_Media,Streaming_Media
+  - RULE-SET,streaming_media,streaming_media
   - RULE-SET,CN,CN
   - GEOIP,CN,DIRECT
   - MATCH,Final
