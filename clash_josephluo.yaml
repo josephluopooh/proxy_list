@@ -1,0 +1,107 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+experimental:
+  ignore-resolve-fail: true
+hosts:
+  mtalk.google.com: 108.177.125.188
+proxies:
+  - name: sample1
+    type: vmess
+    server: sample1.com
+    port: sample
+    uuid: sample
+    alterId: 0
+    cipher: auto
+  - name: sample2
+    type: vmess
+    server: sample2.com
+    port: sample
+    uuid: sample
+    alterId: 0
+    cipher: auto
+  - name: sample3
+    type: vmess
+    server: sample3.com
+    port: sample
+    uuid: sample
+    alterId: 0
+    cipher: auto
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - Auto Select
+      - sample1
+      - sample2
+      - sample3
+  - name: Auto Select
+    type: url-test
+    proxies:
+      - sample1
+      - sample2
+      - sample3
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: CN
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+  - name: Streaming_Media
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+      - sample1
+      - sample2
+      - sample3
+  - name: Final
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+rule-providers:
+  Streaming_Media:
+    type: http
+    behavior: classical
+    path: ./rule-providers/Streaming_Media.yaml
+    url: https://raw.githubusercontent.com/josephluopooh/Proxy_list/main/Streaming_Media.yaml
+    interval: 86400
+  CN:
+    type: http
+    behavior: classical
+    path: ./rule-providers/CN.yaml
+    url: https://raw.githubusercontent.com/josephluopooh/Proxy_list/main/CN.yaml
+    interval: 86400
+rules:
+  - RULE-SET,Streaming_Media,Streaming_Media
+  - RULE-SET,CN,CN
+  - GEOIP,CN,DIRECT
+  - MATCH,Final
+cfw-bypass:
+  - localhost
+  - 127.*
+  - 10.*
+  - 172.16.*
+  - 172.17.*
+  - 172.18.*
+  - 172.19.*
+  - 172.20.*
+  - 172.21.*
+  - 172.22.*
+  - 172.23.*
+  - 172.24.*
+  - 172.25.*
+  - 172.26.*
+  - 172.27.*
+  - 172.28.*
+  - 172.29.*
+  - 172.30.*
+  - 172.31.*
+  - 192.168.*
+  - <local>
+cfw-latency-timeout: 5000
