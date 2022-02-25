@@ -35,15 +35,15 @@ proxy-groups:
     type: select
     proxies:
       - Auto Select
-      - sample1
-      - sample2
-      - sample3
+      # - sample1
+      # - sample2
+      # - sample3
   - name: Auto Select
     type: url-test
     proxies:
-      - sample1
-      - sample2
-      - sample3
+      # - sample1
+      # - sample2
+      # - sample3
     url: http://www.gstatic.com/generate_204
     interval: 300
   - name: CN
@@ -56,9 +56,9 @@ proxy-groups:
     proxies:
       - PROXY
       - DIRECT
-      - sample1
-      - sample2
-      - sample3
+      # - sample1
+      # - sample2
+      # - sample3
   - name: Final
     type: select
     proxies:
