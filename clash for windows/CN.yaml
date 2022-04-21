@@ -10,6 +10,3 @@ payload:
 
   # Edu
   - DOMAIN-SUFFIX,edu.cn
-
-  # IP-CIDR
-  - IP-CIDR,10.10.0.166
