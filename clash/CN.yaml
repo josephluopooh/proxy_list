@@ -1,12 +1,11 @@
+---
 payload:
   # PayPal
-  - DOMAIN-SUFFIX,paypal.com
-  - DOMAIN-SUFFIX,paypal.me
-  - DOMAIN-SUFFIX,paypal-mktg.com
-  - DOMAIN-SUFFIX,paypalobjects.com
-
+  - DOMAIN-SUFFIX, paypal.com
+  - DOMAIN-SUFFIX, paypal.me
+  - DOMAIN-SUFFIX, paypal-mktg.com
+  - DOMAIN-SUFFIX, paypalobjects.com
   # Bilibili
-  - DOMAIN-SUFFIX,bilibili.com
-
+  - DOMAIN-SUFFIX, bilibili.com
   # Edu
-  - DOMAIN-SUFFIX,edu.cn
+  - DOMAIN-SUFFIX, edu.cn
