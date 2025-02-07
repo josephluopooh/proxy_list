@@ -1,55 +1,91 @@
----
+mixed-port: 7890
 allow-lan: false
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:17650
+dns:
+  prefer-h3: false
+  use-hosts: true
+  enable: true
+  ipv6: false
+  use-system-hosts: true
+  ipv6-timeout: 100
+hosts:
+  gerrit.company: todo
+  jira.company: todo
+  mtalk.google.com: 108.177.125.188
 experimental:
   ignore-resolve-fail: true
-external-controller: 127.0.0.1:9090
-hosts:
-  mtalk.google.com: 108.177.125.188
-log-level: info
-mode: Rule
-port: 7890
-proxies: null
+proxies:
+- type: ss
+  cipher: aes-256-gcm
+  server: todo_hostname_here
+  udp: true
+  port: todo_port
+  name: s1
+  password: todo_password_here
+- type: vmess
+  cipher: auto
+  server: todo_hostname_here
+  port: todo_port
+  uuid: todo_uuid_here
+  name: s3
+  alterId: 0
 proxy-groups:
-  - name: PROXY
-    proxies:
-      - auto_select
-    type: select
-  - interval: 300
-    name: auto_select
-    proxies: null
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-  - name: CN
-    proxies:
-      - PROXY
-      - DIRECT
-    type: select
-  - name: streaming_media
-    proxies:
-      - PROXY
-      - DIRECT
-    type: select
-  - name: final
-    proxies:
-      - PROXY
-      - DIRECT
-    type: select
+- type: select
+  proxies:
+  - auto_select
+  name: PROXY
+- type: url-test
+  proxies:
+  - s1
+  - s2
+  - s3
+  - s4
+  - s5
+  - s801
+  interval: 300
+  url: http://www.gstatic.com/generate_204
+  name: auto_select
+  lazy: true
+- type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  name: CN
+- type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  - s1
+  - s2
+  - s3
+  - s4
+  - s5
+  - s801
+  name: streaming_media
+- type: select
+  proxies:
+  - PROXY
+  - DIRECT
+  name: final
+rules:
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- RULE-SET,streaming_media,streaming_media
+- RULE-SET,CN,CN
+- MATCH,final
 rule-providers:
-  CN:
-    behavior: classical
-    interval: 86400
-    path: ./rule-providers/CN.yaml
-    type: http
-    url: https://raw.githubusercontent.com/josephluopooh/proxy_list/main/clash/CN.yaml
   streaming_media:
+    type: http
     behavior: classical
     interval: 86400
     path: ./rule-providers/streaming_media.yaml
-    type: http
     url: https://raw.githubusercontent.com/josephluopooh/proxy_list/main/clash/streaming_media.yaml
-rules:
-  - RULE-SET, streaming_media, streaming_media
-  - RULE-SET, CN, CN
-  - GEOIP, CN, DIRECT
-  - MATCH, final
-socks-port: 7891
+  CN:
+    type: http
+    behavior: classical
+    interval: 86400
+    path: ./rule-providers/CN.yaml
+    url: https://raw.githubusercontent.com/josephluopooh/proxy_list/main/clash/CN.yaml
