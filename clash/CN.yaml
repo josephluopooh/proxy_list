@@ -1,11 +1,39 @@
 ---
 payload:
-  # PayPal
-  - DOMAIN-SUFFIX, paypal.com
-  - DOMAIN-SUFFIX, paypal.me
-  - DOMAIN-SUFFIX, paypal-mktg.com
-  - DOMAIN-SUFFIX, paypalobjects.com
-  # Bilibili
-  - DOMAIN-SUFFIX, bilibili.com
-  # Edu
-  - DOMAIN-SUFFIX, edu.cn
+# PayPal
+- DOMAIN-SUFFIX,paypal.com
+- DOMAIN-SUFFIX,paypal.me
+- DOMAIN-SUFFIX,paypal-mktg.com
+- DOMAIN-SUFFIX,paypalobjects.com
+# Bilibili
+- DOMAIN-SUFFIX,bilibili.com
+- DOMAIN-SUFFIX,bilibili.cn
+- DOMAIN-SUFFIX,bilivideo.cn
+- DOMAIN-SUFFIX,biliapi.com
+- DOMAIN-SUFFIX,biliimg.com
+- DOMAIN-SUFFIX,bilicdn1.com
+- DOMAIN-SUFFIX,biligame.com
+- DOMAIN-SUFFIX,bilicomic.com
+- DOMAIN-SUFFIX,bilivideo.com
+- DOMAIN-SUFFIX,bilicomics.com
+- DOMAIN-SUFFIX,biliapi.net
+- DOMAIN-SUFFIX,biligame.net
+- DOMAIN-SUFFIX,bilivideo.net
+# Edu
+- DOMAIN-SUFFIX,edu.cn
+# Apple
+- DOMAIN-SUFFIX,apple.com.cn
+- DOMAIN-SUFFIX,icloud.com.cn
+- DOMAIN-SUFFIX,cn.apple.com
+- DOMAIN,gs-loc-cn.apple.com
+- DOMAIN,api.smoot.apple.cn
+- DOMAIN-SUFFIX,cn.ls.apple.com
+- DOMAIN-SUFFIX,cn-ssl.ls.apple.com
+- DOMAIN-SUFFIX,gspe19-cn-ssl.ls.apple.com
+# Steam
+- DOMAIN-SUFFIX,steamserver.net
+- DOMAIN-SUFFIX,steamgames.com
+- DOMAIN-SUFFIX,steamusercontent.com
+- DOMAIN-SUFFIX,steamstatic.com
+- DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+- DOMAIN-SUFFIX,steamstat.us
