@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "rules": [
+    {
+      "domain_suffix": [
+        "paypal.com",
+        "paypal.me",
+        "paypal-mktg.com",
+        "paypalobjects.com",
+        "bilibili.com",
+        "bilibili.cn",
+        "bilivideo.cn",
+        "biliapi.com",
+        "biliimg.com",
+        "bilicdn1.com",
+        "biligame.com",
+        "bilicomic.com",
+        "bilivideo.com",
+        "bilicomics.com",
+        "biliapi.net",
+        "biligame.net",
+        "bilivideo.net",
+        "edu.cn",
+        "apple.com.cn",
+        "icloud.com.cn",
+        "cn.apple.com",
+        "cn.ls.apple.com",
+        "cn-ssl.ls.apple.com",
+        "gspe19-cn-ssl.ls.apple.com",
+        "steamserver.net",
+        "steamgames.com",
+        "steamusercontent.com",
+        "steamstatic.com",
+        "steamcdn-a.akamaihd.net",
+        "steamstat.us"
+      ],
+      "domain": [
+        "gs-loc-cn.apple.com",
+        "api.smoot.apple.cn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "log": {
+    "level": "info"
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "hosts",
+        "tag": "hosts",
+        "predefined": {
+          "mtalk.google.com": [
+            "108.177.125.188"
+          ]
+        }
+      },
+      {
+        "type": "local",
+        "tag": "local"
+      }
+    ],
+    "rules": [
+      {
+        "query_type": [
+          "AAAA"
+        ],
+        "action": "predefined",
+        "rcode": "NOERROR"
+      },
+      {
+        "preferred_by": [
+          "hosts"
+        ],
+        "action": "route",
+        "server": "hosts"
+      }
+    ],
+    "final": "local",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890,
+      "set_system_proxy": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "PROXY",
+      "outbounds": [
+        "auto_select"
+      ],
+      "default": "auto_select"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto_select",
+      "outbounds": [
+        "s1",
+        "s3"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "idle_timeout": "30m"
+    },
+    {
+      "type": "selector",
+      "tag": "CN",
+      "outbounds": [
+        "PROXY",
+        "DIRECT"
+      ],
+      "default": "PROXY"
+    },
+    {
+      "type": "selector",
+      "tag": "streaming_media",
+      "outbounds": [
+        "PROXY",
+        "DIRECT",
+        "s1",
+        "s3"
+      ],
+      "default": "PROXY"
+    },
+    {
+      "type": "selector",
+      "tag": "final",
+      "outbounds": [
+        "PROXY",
+        "DIRECT"
+      ],
+      "default": "PROXY"
+    },
+    {
+      "type": "direct",
+      "tag": "DIRECT"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "s1",
+      "server": "s1.example.invalid",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "REPLACE_WITH_YOUR_PASSWORD"
+    },
+    {
+      "type": "vmess",
+      "tag": "s3",
+      "server": "s3.example.invalid",
+      "server_port": 443,
+      "uuid": "00000000-0000-4000-8000-000000000000",
+      "security": "auto",
+      "alter_id": 0,
+      "network": "tcp"
+    }
+  ],
+  "route": {
+    "default_domain_resolver": "local",
+    "rules": [
+      {
+        "domain": [
+          "mtalk.google.com"
+        ],
+        "action": "resolve",
+        "server": "hosts",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "direct",
+        "action": "route",
+        "outbound": "DIRECT"
+      },
+      {
+        "clash_mode": "global",
+        "action": "route",
+        "outbound": "PROXY"
+      },
+      {
+        "ip_cidr": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16"
+        ],
+        "action": "route",
+        "outbound": "DIRECT"
+      },
+      {
+        "rule_set": [
+          "streaming_media"
+        ],
+        "action": "route",
+        "outbound": "streaming_media"
+      },
+      {
+        "rule_set": [
+          "CN"
+        ],
+        "action": "route",
+        "outbound": "CN"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "local",
+        "tag": "streaming_media",
+        "format": "source",
+        "path": "rule-set/streaming_media.json"
+      },
+      {
+        "type": "local",
+        "tag": "CN",
+        "format": "source",
+        "path": "rule-set/CN.json"
+      }
+    ],
+    "final": "final"
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:17650",
+      "default_mode": "rule"
+    }
+  }
+}
