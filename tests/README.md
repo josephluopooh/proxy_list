@@ -12,7 +12,9 @@ The default snapshot command only checks files. After intentionally editing the
 Clash rule lists, run `python3 scripts/sync_rule_sets.py --write` and review both
 snapshots' diffs. It preserves exact-domain, suffix and keyword match types,
 collapses duplicates, and rejects malformed values, unsupported rule types and
-duplicate YAML keys. It never fetches a URL, reads a private config, or changes
+duplicate YAML keys. Snapshot checks also reject duplicate JSON keys and
+non-integer versions, which Python's ordinary JSON comparison can miss.
+It never fetches a URL, reads a private config, or changes
 the selection/routing groups. Other rule types need an explicit converter and
 test change; they are never silently discarded. Snapshots remain manual local
 files, with no background refresh.
@@ -25,12 +27,13 @@ SING_BOX=/absolute/path/to/sing-box MIHOMO=/absolute/path/to/mihomo \
   python3 -m unittest discover -s tests -v
 ```
 
-Without these variables the two engine tests are explicitly skipped. CI requires
+Without these variables the engine tests are explicitly skipped. CI requires
 both, verifies the release archives' SHA-256 digests, and runs the same tests.
 The version pins are compatibility baselines, not a request to upgrade devices.
 
 The suite checks every source rule against its snapshot, malformed-rule failure
-cases, selection defaults, exact private CIDRs with `no-resolve`, streaming/CN
+cases, group types and effective selection defaults, provider definitions,
+exact private CIDRs with `no-resolve`, streaming/CN
 priority, the hosts override, IPv4 DNS behavior and local-only inbounds. It
 compares the official sing-box source and compiled-binary matchers against
 classical-rule semantics for positive, negative, subdomain, uppercase and
@@ -40,8 +43,11 @@ is required: this CLI defaults to source format even for a `.srs` filename.
 Mihomo `-t` receives a temporary copy with documentation-only IP addresses and
 synthetic credentials, plus local file providers instead of HTTP providers.
 Missing node references are deliberately **not** patched in the fixture, so they
-fail the test. The `todo` node/host values in the tracked template are intentional
-setup placeholders, and are the only values replaced apart from provider paths.
+fail the test. Eight negative cases add each undefined extension node to each
+affected group; a positive case defines all four nodes before adding them.
+The `todo` node/host values in the tracked template are intentional setup
+placeholders. The fixture substitutes those values and localizes existing
+providers without recreating missing definitions or changing their behavior.
 Mihomo `-t` validates configuration parsing and references; it does not test
 runtime provider matching. Rule content is checked separately by the strict
 converter and sing-box matcher comparison.

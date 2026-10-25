@@ -39,6 +39,23 @@ def read_yaml(path):
     return yaml.load(path.read_text(encoding="utf-8"), Loader=UniqueLoader)
 
 
+def unique_json_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
+def read_snapshot(path):
+    document = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_json_object)
+    # Python considers 5.0 equal to 5, but sing-box requires an integer version.
+    if not isinstance(document, dict) or type(document.get("version")) is not int:
+        raise ValueError(f"{path}: snapshot version must be an integer")
+    return document
+
+
 def convert(document):
     """Convert only the repository's domain-rule subset, failing on unknown rules."""
     if not isinstance(document, dict) or set(document) != {"payload"}:
@@ -81,7 +98,7 @@ def main():
             path = ROOT / "sing-box" / "rule-set" / f"{name}.json"
             if args.write:
                 path.write_text(json.dumps(expected, indent=2) + "\n", encoding="utf-8")
-            elif not path.exists() or json.loads(path.read_text(encoding="utf-8")) != expected:
+            elif not path.exists() or read_snapshot(path) != expected:
                 stale.append(name)
         if stale:
             raise ValueError(f"stale snapshots: {', '.join(stale)}; run with --write and review the diff")
