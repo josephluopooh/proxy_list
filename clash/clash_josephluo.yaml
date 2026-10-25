@@ -39,11 +39,8 @@ proxy-groups:
 - type: url-test
   proxies:
   - s1
-  - s2
   - s3
-  - s4
-  - s5
-  - s801
+  # Add s2, s4, s5 and s801 here after defining those nodes in proxies.
   interval: 300
   url: http://www.gstatic.com/generate_204
   name: auto_select
@@ -58,11 +55,8 @@ proxy-groups:
   - PROXY
   - DIRECT
   - s1
-  - s2
   - s3
-  - s4
-  - s5
-  - s801
+  # Add s2, s4, s5 and s801 here after defining those nodes in proxies.
   name: streaming_media
 - type: select
   proxies:

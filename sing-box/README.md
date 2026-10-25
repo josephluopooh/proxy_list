@@ -73,10 +73,12 @@ does not trigger DNS resolution, preserving the original `no-resolve` intent.
   hosts file and keeps `mtalk.google.com -> 108.177.125.188`. A targeted resolve
   action applies that explicit override even when the destination uses a proxy.
 - The Clash file enables DNS but supplies no upstream resolver. This template
-  explicitly uses the system resolver as its fallback; it does not invent DoH,
-  fake-IP, DNS interception, or a China/global DNS split. Configure DNS separately
-  if your existing client injects an upstream. DNS is internal: no standalone
-  port-53 listener or system DNS setting is created.
+  explicitly uses the system resolver as its fallback. Mihomo v1.19.33 supplies
+  built-in DoH/DoT defaults when that list is omitted; see the
+  [Clash setup notes](../clash/README.md). The two resolver choices differ.
+  This template adds no fake-IP, DNS interception, or China/global DNS split.
+  Configure DNS separately if your existing client injects an upstream.
+  DNS is internal: no standalone port-53 listener or system DNS setting is created.
 - Other proxied hostnames remain domain names for the remote proxy to resolve.
   IPv4-only internal resolution does not constrain the remote proxy's DNS.
   Also, `default_domain_resolver: local` resolves direct destinations and proxy
@@ -90,23 +92,24 @@ does not trigger DNS resolution, preserving the original `no-resolve` intent.
   depend on the local resolver.
 - The company host entries contain `todo` instead of IP addresses in the source;
   they are intentionally omitted. Add real mappings privately if needed.
-- The source lists `s2`, `s4`, `s5` and `s801` without defining them. Only the two
-  defined node types are included. Add real outbounds first, then add their tags
-  to `auto_select` and `streaming_media`. Failed proxy nodes never automatically
-  fall back to `DIRECT`; direct access requires choosing it explicitly.
+- The source reserves `s2`, `s4`, `s5` and `s801` in comments. Only the two
+  defined node types are active in either template. Add real outbounds first,
+  then add their tags to `auto_select` and `streaming_media`. Failed proxy nodes
+  never automatically fall back to `DIRECT`; direct access requires choosing it
+  explicitly.
 - Clash's `lazy` URL-test flag has no exact sing-box equivalent. The five-minute
   test interval is retained and sing-box's 30-minute idle timeout is explicit.
   Its default latency tolerance is unchanged.
 - Rules are bundled local JSON snapshots instead of the source's daily HTTP rule
-  providers. Update them alongside the Clash lists. There is no automatic remote
-  refresh; this keeps the unpublished checkout usable without nonexistent remote
-  paths and avoids downloads during checking. This profile does not read Clash
-  YAML subscriptions or include a subscription converter.
+  providers. Update them alongside the Clash lists using the explicit
+  [local update command](../tests/README.md). There is no automatic remote
+  refresh; the local layout avoids downloads during checking. This profile does
+  not read Clash YAML subscriptions or include a subscription converter.
 - All 32 CN entries and 77 unique valid streaming entries are retained, including
   exact-domain, suffix and keyword matches. The duplicate
-  `dmqdd6hw24ucf.cloudfront.net` is collapsed. The malformed source suffix
-  `disneyStreaming Media.com` contains whitespace and is omitted without guessing
-  a replacement. The Clash files themselves remain unchanged.
+  `dmqdd6hw24ucf.cloudfront.net` and malformed whitespace-containing suffix
+  `disneyStreaming Media.com` have also been removed from the Clash source,
+  without guessing a replacement. The sing-box snapshots are unchanged.
 - `prefer-h3`, `ipv6-timeout` and `experimental.ignore-resolve-fail` have no direct
   field-for-field equivalent here. No HTTP/3 DNS transport or IPv6 fallback is
   configured. Ordinary proxy domain requests do not require local resolution;
@@ -131,8 +134,10 @@ server reachability, DNS availability, or a successful proxy connection. The
 implementation was checked without starting sing-box or contacting proxy nodes.
 Offline verification compared every converted rule against the Clash source,
 passed 309 source/binary rule-match checks and 12 routing-policy cases, and
-verified that the original Clash file blobs were unchanged. These checks do not
-replace a live connection test with your own node details.
+verified that the original Clash file blobs were unchanged at the initial
+sing-box addition. The current [committed regression suite](../tests/README.md)
+checks both implementations and snapshot parity with pinned engine versions.
+These checks do not replace a live connection test with your own node details.
 
 Official references: [DNS](https://sing-box.sagernet.org/configuration/dns/),
 [hosts](https://sing-box.sagernet.org/configuration/dns/server/hosts/),
